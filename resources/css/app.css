@@ -1,7 +1,118 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-[x-cloak] {
-    display: none;
-}
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;600;700;800;900&display=swap');
+/* app.css */
+/* Global Styles */
+body {
+    font-family: 'Tajawal', sans-serif; /* Arabic friendly font */
+    direction: rtl;
+  }
+  
+  .container-fluid {
+    padding: 0;
+  }
+  
+  /* Top Login/Register Bar */
+  .login-register {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+  }
+  
+  .login-register a {
+    margin: 0 5px;
+    color: #333;
+  }
+  
+  .divider {
+    color: #ddd;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #f8f9fa; /* Light gray */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand img.logo-brand {
+    height: 75px;
+    width: 75px;
+  }
+  
+  .nav-item .nav-link {
+    color: #333;
+    padding: 10px 15px;
+    transition: all 0.3s;
+  }
+  
+  .nav-item .nav-link:hover {
+    background-color: #e9ecef; /* Slightly darker gray */
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  .navbar {
+        background: linear-gradient(to right, #fcbcbc, #b2e9f3);
+    }
+
+  .search-bar .form-control {
+    margin-right: 10px;
+  }
+  /* Main Container */
+.main-container {
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Add this line to center the content horizontally */
+    overflow: hidden;
+  }
+    
+  .main-container::before {
+    content: '';
+    position: absolute; /* Add this line to make the pseudo-element position itself relative to .main-container */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto; /* This will center the content inside the pseudo-element */
+    background-color: rgb(236, 246, 253);
+    background-image: url('/images/patrens.png'); /* Replace with your pattern image path */
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    backdrop-filter: blur(110px);
+    mix-blend-mode: color-dodge;
+  }
+  
+  
+
+  /* Brands & Categories Section */
+  .brands-section,
+  .categories-section {
+    padding: 40px 0;
+    background-color: #f1f3f5; /* Even lighter gray */
+  }
+  
+  /* Dark Mode Toggle */
+  [aria-checked="true"] {
+    background-color: #343a40 !important; /* Bootstrap's dark gray */
+    border-color: #343a40 !important;
+  }
+  
+  /* For mobile screens */
+  @media (max-width: 767.98px) {
+    .navbar-nav.ml-auto {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  
