@@ -2,7 +2,7 @@ import { Link, Head } from '@inertiajs/react';
 import MainCarousel from './Main/MainCarousel';
 import Footer from './Main/Footer';
 import ProductCard from './Main/ProductsCard';
-import BrandCard from './Main/BrandCArd';
+import BrandCard from './Main/BrandCard';
 
 export default function Welcome({ auth }) {
     return (
