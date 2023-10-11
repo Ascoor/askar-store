@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import '../../../css/BrandCard.css';
 import Slider from "react-slick";
-// Fake data
+import Brand1 from '../../Images/brand-1.jpg';
+import Brand2 from '../../Images/brand-2.png';
+import Brand3 from '../../Images/brand-3.png';
+import Brand4 from '../../Images/brand-4.png';
 
 export default class BrandCard extends Component {
     // وضعت المتغيرات خارج الدالة render
@@ -44,51 +47,51 @@ export default class BrandCard extends Component {
  products = [
     {
         name: "Brand 1",
-        description: "This is a description for brand 1.",
+       
 
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand1
     },
     {
         name: "Brand 2",
-        description: "This is a description for brand 2.",
+       
 
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand2
     },
     {
         name: "Brand 3",
-        description: "This is a description for brand 3.",
+       
    
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand3
     },
     {
         name: "Brand 4",
-        description: "This is a description for brand 4.",
+       
 
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand4
     },
     {
         name: "Brand 5",
-        description: "This is a description for brand 5.",
+       
 
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand1
     },
     {
         name: "Brand 6",
-        description: "This is a description for brand 5.",
+       
     
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand2
     },
     {
         name: "Brand 7",
-        description: "This is a description for brand 5.",
+       
   
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand3
     },
     {
         name: "Brand 8",
-        description: "This is a description for brand 5.",
+       
 
-        thumb: "https://via.placeholder.com/150"
+        thumb: Brand4
     }
 ];
     
@@ -97,8 +100,6 @@ render() {return (
         {this.products.map(brand => (
             <div className="brand-card" key={brand.name}>
                 <img src={brand.thumb} alt={brand.name} />
-                <h2>{brand.name}</h2>
-                <p>{brand.description}</p>
           
             </div>
         ))}

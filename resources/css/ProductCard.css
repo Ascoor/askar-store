@@ -1,20 +1,24 @@
-
-
 .product-card {
     text-align: center;
     width: 18%;
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color:#b2e9f3;
+    box-shadow: 0 4px 8px rgba(36, 240, 255, 0.1);
+    background-color: #074d5a;
+    height: 300px; /* Set a fixed height for the product card */
+    overflow: hidden; /* Ensure images don't overflow the container */
 }
+
 .product-card img {
     object-fit: cover;
+    width: 100%; /* Make images responsive to the container's width */
+    height: 100%; /* Ensure images fill the container */
     margin-bottom: 10px;
 }
+
 .product-card h2 {
     font-size: 18px;
     margin-bottom: 10px;
-  
+
 }

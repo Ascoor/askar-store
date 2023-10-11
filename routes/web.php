@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BrandController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +25,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+// routes/web.php
+Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
+Route::post('/brands', [BrandController::class, 'store'])->name('brands.store');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

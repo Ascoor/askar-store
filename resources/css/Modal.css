@@ -1,0 +1,67 @@
+/* custom-modal.css */
+
+/* Style the modal backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the modal container */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the modal content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Style the modal header (if any) */
+.modal-header {
+    border-bottom: none;
+    padding: 10px 20px;
+}
+
+/* Style the modal title */
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Style the modal body */
+.modal-body {
+    padding: 20px;
+}
+
+/* Style the modal footer (if any) */
+.modal-footer {
+    justify-content: flex-end;
+    border-top: none;
+    padding: 10px 20px;
+}
+
+/* Style the close button (if present) */
+.close {
+    font-size: 1.25rem;
+}
+
+/* Style the close button when hovered */
+.close:hover {
+    color: #f00; /* Change to your desired hover color */
+}
+
+/* Style the background overlay */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the maximum width of the modal */
+.max-width-xl {
+    max-width: 600px; /* Adjust to your preferred maximum width */
+}
+
+/* Add more custom styles as needed */

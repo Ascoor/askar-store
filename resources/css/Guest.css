@@ -1,36 +1,46 @@
-
-.logo-brand{
+/* Center the logo */
+.logo-brand {
     width: 150px;
     height: auto;
-justify-self: center;
-margin: auto;
+    margin: 20px auto; /* Center the logo horizontally with some top margin */
 }
+
+/* Update the background */
 .guest-container {
     background-image: linear-gradient(to right, #fcbcbc, #b2e9f3);
-
+    min-height: 100vh; /* Ensure the container takes the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
 }
+
+/* Adjust the login container */
 .container-login {
-    padding: 20px 0;
+    background-color: white; /* Set a background color for the login container */
+    border-radius: 10px; /* Add some border radius for a card-like appearance */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    padding: 20px;
+    text-align: center; /* Center the content within the login container */
+    max-width: 450px;
+    margin: 0 auto;
 }
 
-.col-login {
-    max-width: 450px; /* setting a max width for login column */
-    margin: 0 auto; /* centering the column */
-}
-
+/* Style form inputs */
 .mt-1.block.w-full {
-    margin-top: 5px;
+    margin-top: 10px; /* Increase the top margin for spacing */
     display: block;
     width: 100%;
-    padding: 8px 12px;
+    padding: 10px 12px; /* Slightly larger padding for input fields */
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px; /* Increase the font size for better readability */
 }
 
+/* Style labels */
 label-flex {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center labels horizontally */
 }
 
 label-text {
@@ -39,6 +49,7 @@ label-text {
     color: #555;
 }
 
+/* Style links */
 .link-hover:hover {
     text-decoration: underline;
 }
@@ -48,6 +59,7 @@ label-text {
     outline-offset: 2px;
 }
 
+/* Adjust spacing and alignment for buttons and links */
 .flex.items-center.justify-end.mt-4 {
     display: flex;
     align-items: center;

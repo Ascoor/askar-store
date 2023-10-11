@@ -28,10 +28,11 @@ export default function Authenticated({ user, header, children }) {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" href="#">
-                                    Brands
-                                </NavLink>
-                            </li>
+    <NavLink className="nav-link" href={route('brands.index')}>
+        Brands
+    </NavLink>
+</li>
+
                             <li className="nav-item">
                                 <NavLink className="nav-link" href="#">
                                     Products

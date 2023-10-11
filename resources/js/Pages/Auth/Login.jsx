@@ -36,7 +36,7 @@ export default function Login({ status, canResetPassword }) {
                     <form onSubmit={submit}>
                         <div className="mb-3">
                             <InputLabel htmlFor="email" value="Email" />
-                            
+
                     <TextInput
                         id="email"
                         type="email"
@@ -50,7 +50,7 @@ export default function Login({ status, canResetPassword }) {
 
                     <InputError message={errors.email} className="mt-2" />
                         </div>
-                 
+
                         <div className="mb-4 label-flex">
                         <InputLabel htmlFor="password" value="Password" />
 
@@ -86,7 +86,7 @@ export default function Login({ status, canResetPassword }) {
                     </Link>
                         <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
-                
+
                             <Link
                                 href={route('password.request')}
                                 className="link-hover link-focus"
@@ -100,7 +100,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </form>
         </div>
-        
+
             </div>
         </GuestLayout>
     );

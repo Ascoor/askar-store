@@ -5,8 +5,7 @@
 body {
     font-family: 'Tajawal', sans-serif;
     direction: rtl;
-    
-    background: linear-gradient(to right, #da6767, #7cebff);
+    background: linear-gradient(to right, #F2F2F2, #ECECEC); /* Softer gradient for a more subtle background */
 }
 
 img {
@@ -56,43 +55,50 @@ img {
     color: #333;
 }
 .navbar {
-    background: linear-gradient(to right, #fcbcbc, #b2e9f3);
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #e96666, #e79446); /* Warmer tones for an inviting navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img.logo-brand {
-    height: 5.3875rem; /* 75px */
-    width: 5.3875rem; /* 75px */
+    height: 6.3875rem;
+    width: 6.3875rem;
 }
 
+/* Use the Cairo web font for Arabic text */
 .nav-item .nav-link {
-    font-family: 'Cairo', sans-serif; /* Add the Cairo font */
-    color: #333;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    color: #6a6b60; /* Slightly darker color for better contrast and readability */
     font-weight: 700;
-    
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    padding: 0.625rem 0.9375rem;
     transition: all 0.3s;
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.887); /* Add text shadow */
+    text-shadow: 1px 1px 2px rgba(100, 100, 100, 0.5); /* Subtle text shadow */
 }
 
 .nav-item .nav-link:hover {
-    background-color: #e9ecef;
+    background-color: #E9ECEF;
+    color: #636363; /* Keep text color consistent on hover */
 }
 
+/* Search Bar Styles */
 .search-bar {
     display: flex;
     align-items: center;
 }
 
 .search-bar .form-control {
-    margin-right: 0.625rem; /* 10px */
+    margin-right: 0.625rem;
 }
+
+
+/* Main Container Styles */
 .main-container {
     position: relative;
-    min-height: 100vh; /* Change from height to min-height to allow content expansion */
+    min-height: 100vh;
     z-index: 10;
     overflow: hidden;
-    padding: 2rem 0; /* Add some vertical padding for better spacing */
+    padding: 2rem 0;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for subtle motion effects */
 }
 
 .main-container::before {
@@ -112,18 +118,14 @@ img {
     z-index: -1;
     backdrop-filter: blur(6.875rem);
     mix-blend-mode: color-dodge;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for background changes */
 }
 
-
+/* Brands and Categories Sections Styles */
 .brands-section,
 .categories-section {
-    padding: 2.5rem 0; /* 40px */
-    background-color: #f1f3f5;
-}
-
-[aria-checked="true"] {
-    background-color: #343a40 !important;
-    border-color: #343a40 !important;
+    padding: 2.5rem 0;
+    background-color: #F2F2F2; /* Match the background color for consistency */
 }
 
 /* For mobile screens */
@@ -150,4 +152,3 @@ footer {
         text-align: left;
     }
 }
-

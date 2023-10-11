@@ -65,30 +65,27 @@ export default function Welcome({ auth }) {
                             {/* Search Bar */}
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="ابحث عن منتجات..." aria-label="Search" />
-                                <button className="btn btn-outline-primary" type="submit">بحث</button>
+                                <button className="btn btn-outline-light" type="submit">بحث</button>
                             </form>
                         </div>
                     </div>
                 </nav>
-                <div className='main-container'>
+                <div className='main-container mx-auto'>
 
-    {/* Image Slider */}
-    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
-        <MainCarousel />
-    </div>
+                    {/* Image Slider */}
+                    <div className="container mb-4">
+                        <MainCarousel />
+                    </div>
 
-
-    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
-    <ProductCard/>
- </div>
-    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
-    <BrandCard/>
- </div>
-
-</div>
- <Footer />  {/* Insert the Footer at the bottom of the Welcome component */}
-</div>
-
+                    <div className="container mb-4">
+                        <ProductCard />
+                    </div>
+                    <div className="container mb-4">
+                        <BrandCard />
+                    </div>
+                </div>
+                <Footer />
+            </div>
         </>
     );
 }

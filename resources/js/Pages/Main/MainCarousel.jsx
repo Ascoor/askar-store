@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import Img1 from '../../../../public/images/car-1.webp';
-import Img2 from '../../../../public/images/car-2.webp';
-import Img3 from '../../../../public/images/car-3.webp';
+import Img1 from "../../images/width-card-2.jpg";
+import Img2 from "../../images/width-card-4.avif";
+import Img3 from "../../images/width-card-3.avif";
 
 export default class MainCarousel extends Component {
     render() {
