@@ -1,7 +1,7 @@
-export default function InputError({ message, className = '', ...props }) {
-    return message ? (
-        <p {...props} className={'text-sm text-red-600 ' + className}>
+export default function InputError({ message }) {
+    return (
+        <div className="text-danger mt-2">
             {message}
-        </p>
-    ) : null;
+        </div>
+    );
 }

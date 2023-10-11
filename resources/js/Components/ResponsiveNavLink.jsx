@@ -4,11 +4,11 @@ export default function ResponsiveNavLink({ active = false, className = '', chil
     return (
         <Link
             {...props}
-            className={`w-full flex items-start pl-3 pr-4 py-2 border-l-4 ${
+            className={`w-100 d-flex align-items-start pl-3 pr-4 py-2 border-start-4 ${
                 active
-                    ? 'border-indigo-400 text-indigo-700 bg-indigo-50 focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700'
-                    : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300'
-            } text-base font-medium focus:outline-none transition duration-150 ease-in-out ${className}`}
+                    ? 'border-primary text-primary bg-light focus:text-primary focus:bg-light focus:border-primary'
+                    : 'border-0 text-secondary hover:text-dark hover:bg-light hover:border-secondary focus:text-dark focus:bg-light focus:border-secondary'
+            } lead font-medium ${className}`}
         >
             {children}
         </Link>

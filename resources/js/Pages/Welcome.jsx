@@ -1,26 +1,28 @@
 import { Link, Head } from '@inertiajs/react';
 import MainCarousel from './Main/MainCarousel';
 import Footer from './Main/Footer';
+import ProductCard from './Main/ProductsCard';
+import BrandCard from './Main/BrandCArd';
 
 export default function Welcome({ auth }) {
     return (
         <>
             <Head title="Nove" />
 
-            <div className="container-fluid" dir="rtl">
+            <div className="container-fluid">
 
                 {/* Login/Register Bar */}
-                <div className="d-flex justify-content-end p-2 bg-light border-bottom">
+                <div className="d-flex justify-content-start p-2 bg-dark border-bottom">
                     {auth.user ? (
                         <Link href={route('dashboard')} className="btn-link">
                             Dashboard
                         </Link>
                     ) : (
                         <>
-                            <Link href={route('login')} className="btn-link">
+                            <Link href={route('login')} className="btn-link m-2">
                                 تسجيل الدخول
                             </Link>
-                            <Link href={route('register')} className="btn-link ml-4">
+                            <Link href={route('register')} className="btn-link m-2">
                                 إشتراك
                             </Link>
                         </>
@@ -75,33 +77,13 @@ export default function Welcome({ auth }) {
         <MainCarousel />
     </div>
 
-    {/* Products Section */}
-    <div className="container mb-4">
-        <div className="row">
-            {/* Here you can add 4 cards each for a product */}
-            <div className="col-md-3 mb-3">
-                {/* Product Card */}
-                <div className="card">
-                    {/* ... Card content ... */}
-                </div>
-            </div>
-            {/* ... 3 more product cards ... */}
-        </div>
-    </div>
 
-    {/* Latest Offers */}
-    <div className="container">
-        <div className="row">
-            {/* Here you can add multiple cards for latest offers */}
-            <div className="col-md-3 mb-3">
-                {/* Offer Card */}
-                <div className="card">
-                    {/* ... Card content ... */}
-                </div>
-            </div>
-            {/* ... more offer cards ... */}
-        </div>
-    </div>
+    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
+    <ProductCard/>
+ </div>
+    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
+    <BrandCard/>
+ </div>
 
 </div>
  <Footer />  {/* Insert the Footer at the bottom of the Welcome component */}

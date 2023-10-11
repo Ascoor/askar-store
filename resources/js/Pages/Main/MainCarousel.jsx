@@ -45,13 +45,12 @@ export default class MainCarousel extends Component {
 
         return (
             <div>
-                <h2> Responsive </h2>
                 <Slider ref={c => (this.slider = c)} {...settings}>
                     <div>
-                        <img src={Img1} alt="Slide 1" />
+                        <img src={Img2} alt="Slide 2" />
                     </div>
                     <div>
-                        <img src={Img2} alt="Slide 2" />
+                        <img src={Img1} alt="Slide 1" />
                     </div>
                     <div>
                         <img src={Img3} alt="Slide 3" />

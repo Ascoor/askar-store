@@ -1,0 +1,34 @@
+.brand-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    
+    background-color: skyblue;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    max-width: 200px; /* تحديد العرض الأقصى للبطاقة */
+    margin: 0 10px; /* تحديد المسافات بين البطاقات */
+    text-align: center; /* محاذاة النص في الوسط */
+}
+
+.brand-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05); /* زيادة حجم البطاقة قليلاً عند التحويم */
+}
+
+.brand-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; /* التأكد من أن الصورة تغطي المساحة المحددة بالكامل */
+}
+
+.brand-card h2 {
+    font-size: 1.25rem; /* تحديد حجم الخط */
+    margin-top: 10px;
+    color: #333;
+}
+
+.brand-card p {
+    font-size: 0.9rem; /* تحديد حجم الخط */
+    margin-top: 5px;
+    color: #777;
+}
