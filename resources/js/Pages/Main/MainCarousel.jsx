@@ -1,43 +1,63 @@
-// MainCarousel.jsx
+import React, { Component } from "react";
+import Slider from "react-slick";
+import Img1 from '../../../../public/images/car-1.webp';
+import Img2 from '../../../../public/images/car-2.webp';
+import Img3 from '../../../../public/images/car-3.webp';
 
-import React from 'react';
+export default class MainCarousel extends Component {
+    render() {
+        var settings = {
+            dots: true,
+            infinite: true,  // Make it loop
+            speed: 500,
+            rtl: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            autoplay: true,  // Enable autoplay
+            autoplaySpeed: 3000,  // 3 seconds per slide
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        };
 
-const MainCarousel = () => {
-    return (
-        <div className="carousel slide" id="mainCarousel" data-bs-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src="/images/carousel-2.jpg" className="d-block w-100" alt="Slide 1" />
-                    <div className="carousel-caption">
-                        <h5>Slide 1 Title</h5>
-                        <p>Slide 1 Description</p>
+        return (
+            <div>
+                <h2> Responsive </h2>
+                <Slider ref={c => (this.slider = c)} {...settings}>
+                    <div>
+                        <img src={Img1} alt="Slide 1" />
                     </div>
-                </div>
-                <div className="carousel-item">
-                    <img src="/images/carousel-2.jpg" className="d-block w-100" alt="Slide 2" />
-                    <div className="carousel-caption">
-                        <h5>Slide 2 Title</h5>
-                        <p>Slide 2 Description</p>
+                    <div>
+                        <img src={Img2} alt="Slide 2" />
                     </div>
-                </div>
-                <div className="carousel-item">
-                    <img src="/images/carouser-3.jpg" className="d-block w-100" alt="Slide 3" />
-                    <div className="carousel-caption">
-                        <h5>Slide 3 Title</h5>
-                        <p>Slide 3 Description</p>
+                    <div>
+                        <img src={Img3} alt="Slide 3" />
                     </div>
-                </div>
+                </Slider>
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
-    );
-};
-
-export default MainCarousel;
+        );
+    }
+}

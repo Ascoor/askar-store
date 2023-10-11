@@ -1,5 +1,6 @@
 import { Link, Head } from '@inertiajs/react';
-import MainCarousel from './Main/MainCarousel';  // Adjust the path if necessary
+import MainCarousel from './Main/MainCarousel';
+import Footer from './Main/Footer';
 
 export default function Welcome({ auth }) {
     return (
@@ -8,7 +9,8 @@ export default function Welcome({ auth }) {
 
             <div className="container-fluid" dir="rtl">
 
-                <div className="login-register m-3">
+                {/* Login/Register Bar */}
+                <div className="d-flex justify-content-end p-2 bg-light border-bottom">
                     {auth.user ? (
                         <Link href={route('dashboard')} className="btn-link">
                             Dashboard
@@ -25,8 +27,9 @@ export default function Welcome({ auth }) {
                     )}
                 </div>
 
-                <nav className="navbar navbar-expand-lg m-2">
-                    <div className="container-fluid">
+                {/* Navbar */}
+                <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                    <div className="container">
                         <a className="navbar-brand" href="#">
                             <img src="/images/logo-brand.png" alt="شعار المتجر" className="logo-brand" />
                         </a>
@@ -42,7 +45,7 @@ export default function Welcome({ auth }) {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ml-auto">
+                            <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">الرئيسية</a>
                                 </li>
@@ -56,29 +59,54 @@ export default function Welcome({ auth }) {
                                     <a className="nav-link" href="#">التصنيفات</a>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="login-search">
-                            <div className="search-bar">
-                                <input type="text" placeholder="ابحث عن منتجات..." className="form-control" />
-                                <button className="btn btn-primary">بحث</button>
-                            </div>
+
+                            {/* Search Bar */}
+                            <form className="d-flex">
+                                <input className="form-control me-2" type="search" placeholder="ابحث عن منتجات..." aria-label="Search" />
+                                <button className="btn btn-outline-primary" type="submit">بحث</button>
+                            </form>
                         </div>
                     </div>
                 </nav>
+                <div className='main-container'>
 
-                <div className="main-container">
-                    <div className="brands-section">
-                        <div className="container">
+    {/* Image Slider */}
+    <div className="container mb-4"> {/* Add a Bootstrap container for spacing and alignment */}
+        <MainCarousel />
+    </div>
 
-                        </div>
-                    </div>
-                    <div className="categories-section">
-                        <div className="container">
-                        <MainCarousel />
-                        </div>
-                    </div>
+    {/* Products Section */}
+    <div className="container mb-4">
+        <div className="row">
+            {/* Here you can add 4 cards each for a product */}
+            <div className="col-md-3 mb-3">
+                {/* Product Card */}
+                <div className="card">
+                    {/* ... Card content ... */}
                 </div>
             </div>
+            {/* ... 3 more product cards ... */}
+        </div>
+    </div>
+
+    {/* Latest Offers */}
+    <div className="container">
+        <div className="row">
+            {/* Here you can add multiple cards for latest offers */}
+            <div className="col-md-3 mb-3">
+                {/* Offer Card */}
+                <div className="card">
+                    {/* ... Card content ... */}
+                </div>
+            </div>
+            {/* ... more offer cards ... */}
+        </div>
+    </div>
+
+</div>
+ <Footer />  {/* Insert the Footer at the bottom of the Welcome component */}
+</div>
+
         </>
     );
 }
