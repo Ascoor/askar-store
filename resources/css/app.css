@@ -68,7 +68,7 @@ img {
 .nav-item .nav-link {
     font-family: 'Cairo', sans-serif;
     font-size: 1.2rem;
-    color: #6a6b60; /* Slightly darker color for better contrast and readability */
+    color: #22221e; /* Slightly darker color for better contrast and readability */
     font-weight: 700;
     padding: 0.625rem 0.9375rem;
     transition: all 0.3s;
@@ -152,3 +152,27 @@ footer {
         text-align: left;
     }
 }
+/* Brand List Styles */
+/* Styles for the container */
+.brand-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* To evenly distribute brands in rows */
+    margin: -10px; /* Adjust the margin to create spacing between items */
+  }
+  
+  /* Styles for individual brand items */
+  .brand-item {
+    width: calc(33.33% - 20px); /* Adjust the width for 3 brands per row and add margin */
+    margin: 10px; /* Add margin to create spacing between items */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    text-align: center;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .brand-item {
+      width: calc(50% - 20px); /* For 2 brands per row on smaller screens */
+    }
+  }
+  
