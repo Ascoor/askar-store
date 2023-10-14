@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 class BrandController extends Controller
 {
@@ -40,5 +41,36 @@ class BrandController extends Controller
             'brands' => Brand::all(),
             'success' => 'Brand created successfully.',
         ]);
+    }
+
+
+    public function destroy($id)
+    {
+        // Find the Brand by ID
+        $brand = Brand::find($id);
+    
+        if ($brand) {
+            // Get the image path
+            $imagePath = $brand->image_path;
+    
+            // Delete the image from storage
+            if ($imagePath) {
+                Storage::delete('public/' . $imagePath);
+            }
+    
+            // Delete the Brand
+            $brand->delete();
+    
+            return response()->json([
+                'message' => 'Brand deleted successfully.',
+            ]);
+        }
+    
+        // Handle if the Brand with the given ID doesn't exist
+        if (! $brand) {
+            return response()->json([
+                'message' => 'Brand not found.',
+            ], 404);
+        }
     }
 }

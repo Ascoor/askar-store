@@ -160,7 +160,15 @@ footer {
     justify-content: space-between; /* To evenly distribute brands in rows */
     margin: -10px; /* Adjust the margin to create spacing between items */
   }
-  
+  .delete-icon {
+    cursor: pointer;
+    transition: transform 0.2s; /* Add a smooth transition for the effect */
+}
+
+.delete-icon:hover {
+    transform: scale(1.2); /* Increase the size on hover (adjust the value to your preference) */
+}
+
   /* Styles for individual brand items */
   .brand-item {
     width: calc(33.33% - 20px); /* Adjust the width for 3 brands per row and add margin */

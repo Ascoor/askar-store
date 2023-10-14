@@ -1,34 +1,92 @@
 .brand-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    
     background-color: skyblue;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    max-width: 200px; /* تحديد العرض الأقصى للبطاقة */
-    margin: 0 10px; /* تحديد المسافات بين البطاقات */
-    text-align: center; /* محاذاة النص في الوسط */
-}
-
-.brand-card:hover {
+    max-width: 200px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .brand-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05); /* زيادة حجم البطاقة قليلاً عند التحويم */
-}
-
-.brand-card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover; /* التأكد من أن الصورة تغطي المساحة المحددة بالكامل */
-}
-
-.brand-card h2 {
-    font-size: 1.25rem; /* تحديد حجم الخط */
+    transform: scale(1.05);
+  }
+  
+  .brand-image-container {
+    position: relative;
+  }
+  
+  .close-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .close-icon-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .brand-card h2 {
+    font-size: 1.25rem;
     margin-top: 10px;
     color: #333;
-}
-
-.brand-card p {
-    font-size: 0.9rem; /* تحديد حجم الخط */
+  }
+  
+  .brand-card p {
+    font-size: 0.9rem;
     margin-top: 5px;
     color: #777;
-}
+  }
+  .modal-content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-control {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .add-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-button:hover {
+    background-color: #0056b3;
+  }
+  

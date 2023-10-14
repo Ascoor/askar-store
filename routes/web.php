@@ -28,6 +28,7 @@ Route::get('/', function () {
 // routes/web.php
 Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
 Route::post('/brands', [BrandController::class, 'store'])->name('brands.store');
+Route::delete('/brands/{id}', [BrandController::class, 'destroy'])->name('brands.destroy');
 
 
 Route::get('/dashboard', function () {
