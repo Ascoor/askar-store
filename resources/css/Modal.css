@@ -11,7 +11,27 @@
     justify-content: center;
     align-items: center;
 }
+  
+  /* Modal Styles */
+  .modal-content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+  }
+  
+.modal-header-brand{
+  position: relative;
+  color: #f4f4f4;
+  border-radius: 40px;
+  
+  background-color: #ffa51e;
+}
+.modal-header-brand .btn-close {
+  position: inherit;
 
+}
 /* Style the modal content */
 .modal-content {
     background-color: #fff;

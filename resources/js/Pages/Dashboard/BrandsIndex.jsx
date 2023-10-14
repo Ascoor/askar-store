@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/react';
 import axios from 'axios';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { FcFullTrash } from 'react-icons/fc'
+import { FaPlus } from 'react-icons/fa'
 import Modal from '@/Components/Modal';
 import '../../../css/BrandCard.css'
 export default function BrandsIndex({ auth, brands }) {
@@ -81,24 +82,29 @@ export default function BrandsIndex({ auth, brands }) {
     return (
         <AuthenticatedLayout
             user={auth.user}
-            header={<h2 className="fw-bold fs-4 text-dark">Brands</h2>}
+            header={<h2 className="">Brands</h2>}
         >
             <Head title="Brands" />
-
-            <div className="d-flex justify-content-end">
-                <button className="btn btn-primary" onClick={() => setShowAddModal(true)}>
-                    Add Brand
-                </button>
+            <div className='add-button-container mb-5'>
+            <button className="add-button" onClick={() => setShowAddModal(true)}>
+                <FaPlus /> Add
+            </button>
             </div>
-
             <div className="brand-container">
                 {currentBrands.map((brand, index) => (
                     <div key={index} className="brand-card">
                         <div className="brand-image-container">
-                            <FcFullTrash size={20} onClick={() => deleteBrand(brand)} />
-                            <img src={'/storage/' + brand.image_path} alt={brand.name} />
+                            <FcFullTrash
+                                size={25}
+                                onClick={() => deleteBrand(brand)}
+                                className="delete-icon"
+                            />
+                            <img
+                                src={'/storage/' + brand.image_path}
+                                alt={brand.name}
+                                className="brand-image"
+                            />
                         </div>
-
 
                         <h2>{brand.name}</h2>
                     </div>
@@ -107,6 +113,7 @@ export default function BrandsIndex({ auth, brands }) {
             <Modal className="modal-content"
                 show={showAddModal}
                 onClose={() => setShowAddModal(false)}
+                states={'Add Brand'}
             >
                 <form>
                     <input
@@ -131,11 +138,14 @@ export default function BrandsIndex({ auth, brands }) {
             </Modal>
 
             <Modal show={showDeleteModal}
-                onClose={() => setShowDeleteModal(false)}>
+                onClose={() => setShowDeleteModal(false)}
+                states={'Delete Brand'}
+                maxWidth="2xl"
+            >
                 <h2>Confirm Delete</h2>
                 <p>Are you sure you want to delete {brandToDelete ? brandToDelete.name : 'this brand'}?</p>
-                <button onClick={() => setShowDeleteModal(false)}>Cancel</button>
-                <button onClick={() => confirmDelete(brandToDelete)}>Confirm</button>
+                <button className='cancel-button-delete' onClick={() => setShowDeleteModal(false)}>Cancel</button>
+                <button className="confirm-button-delete" onClick={() => confirmDelete(brandToDelete)}>Confirm</button>
             </Modal>
         </AuthenticatedLayout>
     );

@@ -17,7 +17,13 @@ class BrandController extends Controller
             'brands' => $brands,
         ]);
     }
-
+public function data()
+{
+    $brands = Brand::all();
+    return response()->json([
+        'brands' => $brands,
+    ]);
+}
     public function store(Request $request)
     {
         $request->validate([
@@ -37,9 +43,8 @@ class BrandController extends Controller
         $brand->image_path = $imagePath;
         $brand->save();
     
-        return Inertia::render('Dashboard/BrandsIndex', [
-            'brands' => Brand::all(),
-            'success' => 'Brand created successfully.',
+        return response()->json([
+            'message' => 'Brand add successfully.',
         ]);
     }
     

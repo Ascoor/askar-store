@@ -1,110 +1,105 @@
-import React, { Component } from "react";
-import '../../../css/BrandCard.css';
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import Brand1 from '../../Images/brand-1.jpg';
-import Brand2 from '../../Images/brand-2.png';
-import Brand3 from '../../Images/brand-3.png';
-import Brand4 from '../../Images/brand-4.png';
+import axios from "axios";
+import "../../../css/BrandCard.css";
 
-export default class BrandCard extends Component {
-    // وضعت المتغيرات خارج الدالة render
-    settings = {
-        dots: true,
-        infinite: true,
-        speed: 5000, // زيادة السرعة لجعل التحرك بطيئًا
-        autoplay: true, // تشغيل التحرك التلقائي
-        autoplaySpeed: 5000, // الوقت بين التحولات التلقائية
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+const BrandCard = () => {
+  const [brands, setBrands] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBrandsData = async () => {
+      try {
+        const response = await axios.get("/brands-data");
+        console.log(response.data); // Log the response
+        setBrands(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching brands data: ", error);
+      }
     };
-
-
- products = [
-    {
-        name: "Brand 1",
-       
-
-        thumb: Brand1
-    },
-    {
-        name: "Brand 2",
-       
-
-        thumb: Brand2
-    },
-    {
-        name: "Brand 3",
-       
-   
-        thumb: Brand3
-    },
-    {
-        name: "Brand 4",
-       
-
-        thumb: Brand4
-    },
-    {
-        name: "Brand 5",
-       
-
-        thumb: Brand1
-    },
-    {
-        name: "Brand 6",
-       
-    
-        thumb: Brand2
-    },
-    {
-        name: "Brand 7",
-       
   
-        thumb: Brand3
+    fetchBrandsData();
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };  
+
+  const exampleImages = [
+    {
+      name: "Example 1",
     },
     {
-        name: "Brand 8",
-       
+      name: "Example 2",
+    },
+    {
+      name: "Example 3",
+    },
+    {
+      name: "Example 4",
+    },
+    {
+      name: "Example 5",
+    },
+  ];
 
-        thumb: Brand4
-    }
-];
-    
-render() {return (
-    <Slider {...this.settings}>
-        {this.products.map(brand => (
-            <div className="brand-card" key={brand.name}>
-                <img src={brand.thumb} alt={brand.name} />
-          
+  return (
+    <Slider {...settings}>
+      {loading ? (
+        <div>Loading...</div>
+      ) : brands.length > 0 ? (
+        brands.map((brand, index) => (
+          <div key={index} className="brand-card">
+            <img
+              src={`/storage/${brand.image_path}`}
+              alt={brand.name}
+              className="brand-image"
+            />
+          </div>
+        ))
+      ) : (
+        exampleImages.map((example, index) => (
+          <div key={index} className="brand-card">
+            <div className="example-overlay">
+              <h2>{example.name}</h2>
             </div>
-        ))}
+          </div>
+        ))
+      )}
     </Slider>
-);
+  );
+};
 
-}
-}
+export default BrandCard;

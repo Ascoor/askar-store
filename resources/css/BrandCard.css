@@ -1,46 +1,85 @@
-/* Brand Card Styles */
-  .brand-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: skyblue;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    max-width: 200px;
-    margin: 0 10px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .brand-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05);
-  }
-  
-  .brand-image-container {
-    position: relative;
-  }
-  
-  .delete-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px;
-    border-radius: 70%;
-    cursor: pointer;
-    color: red;
-    font-size: 1.2rem;
-  }
-  
-  .brand-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05);
-  }
-  
-  .brand-image-container {
-    position: relative;
-  }
-  
+.brand-card {
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px; /* Rounded corners for a better look */
+  background-color: rgb(235, 185, 135);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.brand-image-container {
+  width: 100%; /* Set a responsive width */
+  padding-top: 100%; /* Create a square aspect ratio (1:1) */
+  position: relative;
+}
+
+.brand-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%; /* Ensure the image maintains its aspect ratio */
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.brand-card h2 {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  color: #ffffff;
+  text-shadow: 2px 2px #b05a14;
+}
+
+.brand-card p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #777;
+}
+
+
+.example-overlay {
+  width: 100%; /* Set a responsive width */
+  height: 100%; /* Set a responsive height */
+  background-color: rgba(255, 217, 184, 0.8); /* Set the background color and opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.example-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; /* Ensure the image maintains its aspect ratio */
+}
+
+.brand-image-container {
+  position: relative;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: red;
+}
+
+.brand-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.brand-card h2 {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  color: #ffffff;
+  text-shadow: 2px 2px #b05a14;
+}
   .close-overlay {
     position: absolute;
     top: 0;
@@ -56,28 +95,12 @@
     border-radius: 0.25rem;
     cursor: pointer;
   }
-  
-  .brand-card h2 {
-    font-size: 1.25rem;
-    margin-top: 10px;
-    color: #333;
-  }
-  
+
   .brand-card p {
     font-size: 0.9rem;
     margin-top: 5px;
     color: #777;
   }
-  
-  /* Modal Styles */
-  .modal-content {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    text-align: center;
-  }
-  
   .close-icon {
     position: absolute;
     top: 10px;
@@ -115,4 +138,29 @@
     background-color: #0056b3;
   
   }
+  .cancel-button-delete {
+    background-color: red;
+    color: #fff;    padding: 10px 20px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .cancel-button-delete:hover {
+    background-color: rgb(138, 41, 41);  
+
+  }
+  .confirm-button-delete {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
+  .confirm-button-delete:hover {
+    background-color: #0056b3;
+  
+  }
