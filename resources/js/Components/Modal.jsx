@@ -21,13 +21,7 @@ export default function CustomModal({
                 <Modal.Title>Modal Title</Modal.Title>
             </Modal.Header>
             <Modal.Body>{children}</Modal.Body>
-            {closeable && (
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={close}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            )}
+          
         </Modal>
     );
 }

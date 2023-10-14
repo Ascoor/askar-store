@@ -30,7 +30,7 @@ class BrandController extends Controller
         // Resize the image to 150x150
         $resizedImage = Image::make(public_path('storage/' . $imagePath))
             ->fit(150, 150)
-            ->save();
+            ->save(null, 100); // Specify format and quality here (null for original format)
     
         $brand = new Brand();
         $brand->name = $request->name;
@@ -42,6 +42,7 @@ class BrandController extends Controller
             'success' => 'Brand created successfully.',
         ]);
     }
+    
 
 
     public function destroy($id)
