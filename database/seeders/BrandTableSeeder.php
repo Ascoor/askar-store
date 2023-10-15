@@ -17,31 +17,31 @@ class BrandTableSeeder extends Seeder
     {
         $brands = [
             [
-                'name' => 'Brand 1',
+                'name' => 'Zara',
                 'image_path' => 'brand-1.jpg',
             ],
             [
-                'name' => 'Brand 2',
-                'image_path' => 'brand-2.jpg',
+                'name' => 'H&M',
+                'image_path' => 'brand-2.png',
             ],
             [
-                'name' => 'Brand 3',
+                'name' => 'Shein',
                 'image_path' => 'brand-3.png',
             ],
             [
-                'name' => 'Brand 4',
+                'name' => 'D&G',
                 'image_path' => 'brand-4.jpg',
             ],
         ];
 
         foreach ($brands as $brand) {
             $newBrand = \App\Models\Brand::create($brand);
-            
+
             $sourcePath = public_path('images/' . $brand['image_path']);
             $destinationPath = storage_path('app/public/brand_images/' . $brand['image_path']);
-            
+
             File::makeDirectory(dirname($destinationPath), 0755, true, true);
-            
+
             // Resize the image without cutting
             $resizedImage = Image::make($sourcePath)->resize(150, 150, function ($constraint) {
                 $constraint->aspectRatio(); // Maintain aspect ratio
@@ -49,7 +49,7 @@ class BrandTableSeeder extends Seeder
             });
 
             $resizedImage->save($destinationPath);
-            
+
             $newBrand->update(['image_path' => 'brand_images/' . $brand['image_path']
             ]
             );

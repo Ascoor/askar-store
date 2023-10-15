@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
-import "../../../css/BrandCard.css";
-
+import "../../../css/BrandCard.css"
 const BrandCard = () => {
   const [brands, setBrands] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +17,7 @@ const BrandCard = () => {
         console.error("Error fetching brands data: ", error);
       }
     };
-  
+
     fetchBrandsData();
   }, []);
 
@@ -55,7 +54,7 @@ const BrandCard = () => {
         },
       },
     ],
-  };  
+  };
 
   const exampleImages = [
     {
@@ -79,25 +78,34 @@ const BrandCard = () => {
     <Slider {...settings}>
       {loading ? (
         <div>Loading...</div>
-      ) : brands.length > 0 ? (
-        brands.map((brand, index) => (
-          <div key={index} className="brand-card">
-            <img
-              src={`/storage/${brand.image_path}`}
-              alt={brand.name}
-              className="brand-image"
-            />
-          </div>
-        ))
-      ) : (
-        exampleImages.map((example, index) => (
-          <div key={index} className="brand-card">
-            <div className="example-overlay">
-              <h2>{example.name}</h2>
-            </div>
-          </div>
-        ))
-      )}
+        ) : brands.length > 0 ? (
+  brands.map((brand, index) => (
+    <div key={index} className="brand-card">
+      <div className="brand-image-container">
+        <p>{brand.name}</p>
+        <img
+          src={`/storage/${brand.image_path}`}
+          alt={brand.name}
+          className="brand-image"
+        />
+      </div>
+    </div>
+  ))
+) : (
+  exampleImages.map((example, index) => (
+    <div key={index} className="brand-card">
+      <div className="example-overlay">
+        <img
+          src={example.imagePath} /* Replace with the path to your example image */
+          alt={example.name}
+          className="brand-image"
+        />
+        <p>{example.name}</p>
+      </div>
+    </div>
+  ))
+)}
+
     </Slider>
   );
 };

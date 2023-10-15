@@ -39,7 +39,7 @@ export default function Authenticated({ user, header, children }) {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" href="#">
+                                <NavLink className="nav-link" href={route('categories.index')}>
                                     Category
                                 </NavLink>
                             </li>

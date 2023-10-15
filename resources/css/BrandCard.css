@@ -1,42 +1,57 @@
 .brand-card {
-  width: 150px; /* Set a fixed width */
-  height: 150px; /* Set a fixed height */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 10px; /* Rounded corners for a better look */
-  background-color: rgb(235, 185, 135);
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
+    width: 200px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Slightly more rounded corners */
+    background: linear-gradient(135deg, #FFB973, #FF8C55); /* Gradient background */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
 
-.brand-image-container {
-  width: 100%; /* Set a responsive width */
-  padding-top: 100%; /* Create a square aspect ratio (1:1) */
-  position: relative;
-}
+  .brand-image-container {
+    width: 100%;
+    padding-top: 75%; /* Create a 3:4 aspect ratio (adjust as needed) */
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+  }
 
-.brand-image {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%; /* Ensure the image maintains its aspect ratio */
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+  .brand-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-.brand-card h2 {
-  font-size: 1.25rem;
-  margin-top: 10px;
-  color: #ffffff;
-  text-shadow: 2px 2px #b05a14;
-}
+  .brand-card h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px #b05a14;
+    text-align: center;
+  }
 
-.brand-card p {
-  font-size: 0.9rem;
-  margin-top: 5px;
-  color: #777;
-}
+  .brand-card p {
+    /* Your existing styles */
+    position: absolute;
+    bottom: 10px; /* Adjust the vertical position as needed */
+    left: 10px; /* Adjust the horizontal position as needed */
+    background: rgba(255, 255, 255, 0.7); /* Background for better readability */
+    padding: 5px; /* Add some padding for the text */
+    border-radius: 5px; /* Rounded corners for the text background */
+    color: #333; /* Text color */
+  }
+  .brand-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
 
 
 .example-overlay {
@@ -86,7 +101,7 @@
     right: 0;
     background: rgba(255, 255, 255, 0.8);
   }
-  
+
   .close-icon-button {
     background-color: red;
     color: white;
@@ -109,13 +124,13 @@
     cursor: pointer;
     color: #555;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .form-control {
     margin: 10px 0;
     padding: 10px;
@@ -123,7 +138,7 @@
     border-radius: 0.25rem;
     width: 100%;
   }
-  
+
   .add-button {
     background-color: #007bff;
     color: #fff;
@@ -133,10 +148,10 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .add-button:hover {
     background-color: #0056b3;
-  
+
   }
   .cancel-button-delete {
     background-color: red;
@@ -147,7 +162,7 @@
     transition: background-color 0.3s;
   }
   .cancel-button-delete:hover {
-    background-color: rgb(138, 41, 41);  
+    background-color: rgb(138, 41, 41);
 
   }
   .confirm-button-delete {
@@ -159,8 +174,8 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .confirm-button-delete:hover {
     background-color: #0056b3;
-  
+
   }

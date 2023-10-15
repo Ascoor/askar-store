@@ -30,7 +30,7 @@ Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
 Route::post('/brands', [BrandController::class, 'store'])->name('brands.store');
 Route::delete('/brands/{id}', [BrandController::class, 'destroy'])->name('brands.destroy');
 Route::get('/brands-data', [BrandController::class, 'data'])->name('brands.data');
-
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
